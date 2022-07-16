@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: neural-search-pod
+  labels:
+    name: neural-search-pod
+    app: neural-search-app
+
+spec:
+  containers:
+    - name: neural-search-app
+      image: gcr.io/neuralsearch-350415/neural_search
+      ports:
+        - containerPort: 5000
