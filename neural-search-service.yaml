@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: neural-search
+  labels:
+    name: neural-search-service
+    app: neural-search-app
+    namespace: prod
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      targetPort: 5000
+      protocol: TCP
+  selector:
+    name: neural-search-pod
+    app: neural-search-app
